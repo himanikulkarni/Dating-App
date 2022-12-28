@@ -1,10 +1,8 @@
+import 'package:datingapp_1/lib/settings%20.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gradient_borders/gradient_borders.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'home_swipe.dart';
-import 'users.dart';
 
 void main() {
   runApp(
@@ -25,6 +23,24 @@ class _ProfiledetailsWidgetState extends State<ProfiledetailsWidget> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          actions: [
+            Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => SettingsWidget()),
+                    );
+                  },
+                  child: const Icon(
+                    Icons.settings,
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
         body: Container(
           width: double.infinity,
           height: 896,
@@ -93,7 +109,7 @@ class _ProfiledetailsWidgetState extends State<ProfiledetailsWidget> {
                                               Radius.elliptical(45, 45)),
                                         ),
                                         child: IconButton(
-                                          icon: Icon(Icons.chat,
+                                          icon: const Icon(Icons.chat,
                                               color: Colors.white),
                                           onPressed: () =>
                                               Navigator.of(context).pop(),
@@ -814,12 +830,7 @@ Widget NavBar(BuildContext context) {
             width: 18.w,
           ),
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const swipe_card()),
-              );
-            },
+            onTap: () {},
             child: Image.asset(
               'slide.jpeg',
               fit: BoxFit.cover,
@@ -831,12 +842,7 @@ Widget NavBar(BuildContext context) {
             width: 35.w,
           ),
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Users()),
-              );
-            },
+            onTap: () {},
             child: Image.asset(
               'users.jpeg',
               fit: BoxFit.cover,
@@ -858,12 +864,7 @@ Widget NavBar(BuildContext context) {
             width: 30.w,
           ),
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfiledetailsWidget()),
-              );
-            },
+            onTap: () {},
             child: Image.asset(
               'profile.jpeg',
               fit: BoxFit.cover,

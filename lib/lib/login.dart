@@ -9,17 +9,17 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 
 void main() => runApp(const MaterialApp(
-      home: Myapp(),
+      home: login_page(),
     ));
 
-class Myapp extends StatefulWidget {
-  const Myapp({Key? key}) : super(key: key);
+class login_page extends StatefulWidget {
+  const login_page({Key? key}) : super(key: key);
 
   @override
-  State<Myapp> createState() => _MyappState();
+  State<login_page> createState() => _login_pageState();
 }
 
-class _MyappState extends State<Myapp> {
+class _login_pageState extends State<login_page> {
   TextEditingController mobile = TextEditingController();
 
   Future register() async {
@@ -250,28 +250,37 @@ class _MyappState extends State<Myapp> {
                               Positioned(
                                   top: 0.h,
                                   left: 0.w,
-                                  child: Container(
-                                      width: 212.w,
-                                      height: 60.h,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(80.r),
-                                          topRight: Radius.circular(80.r),
-                                          bottomLeft: Radius.circular(80.r),
-                                          bottomRight: Radius.circular(80.r),
-                                        ),
-                                        border: Border.all(
-                                          color: Colors.white,
-                                          width: 2.w,
-                                        ),
-                                        gradient: const LinearGradient(
-                                            begin: Alignment.centerLeft,
-                                            end: Alignment.centerRight,
-                                            colors: [
-                                              Color.fromRGBO(250, 69, 126, 1),
-                                              Color.fromRGBO(123, 73, 255, 1)
-                                            ]),
-                                      ))),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const VerifyPage()),
+                                      );
+                                    },
+                                    child: Container(
+                                        width: 212.w,
+                                        height: 60.h,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(80.r),
+                                            topRight: Radius.circular(80.r),
+                                            bottomLeft: Radius.circular(80.r),
+                                            bottomRight: Radius.circular(80.r),
+                                          ),
+                                          border: Border.all(
+                                            color: Colors.white,
+                                            width: 2.w,
+                                          ),
+                                          gradient: const LinearGradient(
+                                              begin: Alignment.centerLeft,
+                                              end: Alignment.centerRight,
+                                              colors: [
+                                                Color.fromRGBO(250, 69, 126, 1),
+                                                Color.fromRGBO(123, 73, 255, 1)
+                                              ]),
+                                        )),
+                                  )),
                               Positioned(
                                   top: 8.h,
                                   left: 10.w,

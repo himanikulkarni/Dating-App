@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gradient_borders/gradient_borders.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'upload.dart';
 
 void main() {
   runApp(
@@ -963,40 +964,49 @@ class _LikesinterestsWidgetState extends State<LikesinterestsWidget> {
                         Positioned(
                             top: 0.h,
                             left: 0.w,
-                            child: Container(
-                                width: 212.w,
-                                height: 65.h,
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(80),
-                                    topRight: Radius.circular(80),
-                                    bottomLeft: Radius.circular(80),
-                                    bottomRight: Radius.circular(80),
-                                  ),
-                                  gradient: LinearGradient(
-                                      begin: Alignment(0.9987574815750122,
-                                          -0.05091972276568413),
-                                      end: Alignment(0.05091972276568413,
-                                          0.07119524478912354),
-                                      colors: [
-                                        Color.fromRGBO(250, 69, 126, 1),
-                                        Color.fromRGBO(123, 73, 255, 1)
-                                      ]),
-                                ))),
-                        Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              'Continue',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: const Color.fromRGBO(255, 255, 255, 1),
-                                  fontFamily: 'Lexend',
-                                  fontSize: 18.sp,
-                                  letterSpacing:
-                                      0 /*percentages not used in flutter. defaulting to zero*/,
-                                  fontWeight: FontWeight.normal,
-                                  height: 1.h),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => UploadidWidget()),
+                                );
+                              },
+                              child: Container(
+                                  width: 212.w,
+                                  height: 65.h,
+                                  decoration: const BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(80),
+                                      topRight: Radius.circular(80),
+                                      bottomLeft: Radius.circular(80),
+                                      bottomRight: Radius.circular(80),
+                                    ),
+                                    gradient: LinearGradient(
+                                        begin: Alignment(0.9987574815750122,
+                                            -0.05091972276568413),
+                                        end: Alignment(0.05091972276568413,
+                                            0.07119524478912354),
+                                        colors: [
+                                          Color.fromRGBO(250, 69, 126, 1),
+                                          Color.fromRGBO(123, 73, 255, 1)
+                                        ]),
+                                  )),
                             )),
+                        Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Continue',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: const Color.fromRGBO(255, 255, 255, 1),
+                                fontFamily: 'Lexend',
+                                fontSize: 18.sp,
+                                letterSpacing:
+                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                fontWeight: FontWeight.normal,
+                                height: 1.h),
+                          ),
+                        ),
                       ]))),
               SizedBox(
                 height: 60.h,

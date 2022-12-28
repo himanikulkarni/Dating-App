@@ -5,11 +5,11 @@ import 'package:gradient_borders/gradient_borders.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 void main() {
-  runApp(const task());
+  runApp(const filter());
 }
 
-class task extends StatelessWidget {
-  const task({super.key});
+class filter extends StatelessWidget {
+  const filter({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,7 @@
-import 'home_swipe.dart';
 import 'posts.dart';
-import 'profileuser.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 
 class Users extends StatefulWidget {
   const Users({super.key});
@@ -91,12 +88,7 @@ Widget NavBar(BuildContext context) {
             width: 18.w,
           ),
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const swipe_card()),
-              );
-            },
+            onTap: () {},
             child: Image.asset(
               'slide.jpeg',
               fit: BoxFit.cover,
@@ -108,12 +100,7 @@ Widget NavBar(BuildContext context) {
             width: 35.w,
           ),
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Users()),
-              );
-            },
+            onTap: () {},
             child: Image.asset(
               'users.jpeg',
               fit: BoxFit.cover,
@@ -135,12 +122,7 @@ Widget NavBar(BuildContext context) {
             width: 30.w,
           ),
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfiledetailsWidget()),
-              );
-            },
+            onTap: () {},
             child: Image.asset(
               'profile.jpeg',
               fit: BoxFit.cover,

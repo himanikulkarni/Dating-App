@@ -1,3 +1,4 @@
+import 'package:datingapp_1/lib/home_swipe.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -226,26 +227,35 @@ class _LocationWidgetState extends State<LocationWidget> {
                           Positioned(
                               top: 0.h,
                               left: 0.w,
-                              child: Container(
-                                  width: 212.w,
-                                  height: 60.h,
-                                  decoration: const BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(80),
-                                      topRight: Radius.circular(80),
-                                      bottomLeft: Radius.circular(80),
-                                      bottomRight: Radius.circular(80),
-                                    ),
-                                    gradient: LinearGradient(
-                                        begin: Alignment(0.9987574815750122,
-                                            -0.05091972276568413),
-                                        end: Alignment(0.05091972276568413,
-                                            0.07119524478912354),
-                                        colors: [
-                                          Color.fromRGBO(250, 69, 126, 1),
-                                          Color.fromRGBO(123, 73, 255, 1)
-                                        ]),
-                                  ))),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const swipe_card()),
+                                  );
+                                },
+                                child: Container(
+                                    width: 212.w,
+                                    height: 60.h,
+                                    decoration: const BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(80),
+                                        topRight: Radius.circular(80),
+                                        bottomLeft: Radius.circular(80),
+                                        bottomRight: Radius.circular(80),
+                                      ),
+                                      gradient: LinearGradient(
+                                          begin: Alignment(0.9987574815750122,
+                                              -0.05091972276568413),
+                                          end: Alignment(0.05091972276568413,
+                                              0.07119524478912354),
+                                          colors: [
+                                            Color.fromRGBO(250, 69, 126, 1),
+                                            Color.fromRGBO(123, 73, 255, 1)
+                                          ]),
+                                    )),
+                              )),
                           Positioned(
                               top: 23.h,
                               left: 73.w,

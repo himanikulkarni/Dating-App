@@ -1,8 +1,11 @@
+import 'package:datingapp_1/lib/filter.dart';
+import 'package:datingapp_1/lib/messages.dart';
+import 'users.dart';
+import 'package:datingapp_1/lib/users.dart';
 import 'package:flutter/material.dart';
 import 'package:swipe_deck/swipe_deck.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'users.dart';
 import 'profileuser.dart';
 
 class swipe_card extends StatefulWidget {
@@ -45,7 +48,13 @@ class _swipe_cardState extends State<swipe_card> {
           preferredSize: Size.fromHeight(55.h),
           child: AppBar(
             elevation: 0.0,
-            leading: const Text("Anbe", style: TextStyle(color: Colors.black, fontSize: 20,),),
+            leading: const Text(
+              "Anbe",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+              ),
+            ),
             backgroundColor: Colors.white,
             actions: [
               Row(
@@ -58,7 +67,14 @@ class _swipe_cardState extends State<swipe_card> {
                   SizedBox(
                     width: 20.w,
                   ),
-                  SvgPicture.asset('Vector.svg'),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => const filter()),
+                        );
+                      },
+                      child: SvgPicture.asset('Vector.svg')),
                   SizedBox(
                     width: 20.w,
                   ),
@@ -67,20 +83,17 @@ class _swipe_cardState extends State<swipe_card> {
             ],
           ),
         ),
-        body:
-        Column(
-
+        body: Column(
           children: [
             const SizedBox(
               height: 130,
             ),
             Container(
-              child:
-              SwipeDeck(
+              child: SwipeDeck(
                 startIndex: 0,
-                emptyIndicator: Container(
+                emptyIndicator: const SizedBox(
                   height: 130,
-                  child: const Center(
+                  child: Center(
                     child: Text('Nothing Here'),
                   ),
                 ),
@@ -90,7 +103,6 @@ class _swipe_cardState extends State<swipe_card> {
                 onChange: (index) {},
                 widgets: gradientColors.map((e) => swipe_card(e)).toList(),
               ),
-
             ),
             SizedBox(
               height: 85.h,
@@ -156,7 +168,6 @@ class _swipe_cardState extends State<swipe_card> {
   }
 
   Widget swipe_card(List<Color> colors) => Container(
-
       decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -165,7 +176,6 @@ class _swipe_cardState extends State<swipe_card> {
           ),
           borderRadius: BorderRadius.circular(20.r)),
       child: Column(
-
         children: [
           SizedBox(
             height: 150.h,
@@ -239,12 +249,7 @@ Widget NavBar(BuildContext context) {
             width: 18.w,
           ),
           GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const swipe_card()),
-              );
-            },
+            onTap: () {},
             child: Image.asset(
               'slide.jpeg',
               fit: BoxFit.cover,
@@ -271,7 +276,11 @@ Widget NavBar(BuildContext context) {
           ),
           SizedBox(width: 30.w),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const Messagemenu()),
+              );
+            },
             child: Image.asset(
               'chat.jpeg',
               fit: BoxFit.cover,

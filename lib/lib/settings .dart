@@ -1,6 +1,7 @@
+import 'package:datingapp_1/lib/payment.dart';
+import 'package:datingapp_1/lib/subscription.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -398,29 +399,38 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             Positioned(
                                 top: 135.h,
                                 left: 63.w,
-                                child: SizedBox(
-                                    width: 250.w,
-                                    height: 23.h,
-                                    child: Stack(children: <Widget>[
-                                      Positioned(
-                                          top: 0.h,
-                                          left: 0.w,
-                                          child: GradientText(
-                                            'Manage Subscriptions',
-                                            textAlign: TextAlign.left,
-                                            style: TextStyle(
-                                                fontFamily: 'Lexend',
-                                                fontSize: 18.sp,
-                                                letterSpacing:
-                                                    0 /*percentages not used in flutter. defaulting to zero*/,
-                                                fontWeight: FontWeight.normal,
-                                                height: 1.h),
-                                            colors: const [
-                                              Colors.pink,
-                                              Colors.purple,
-                                            ],
-                                          )),
-                                    ]))),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              SubscriptionWidget()),
+                                    );
+                                  },
+                                  child: SizedBox(
+                                      width: 250.w,
+                                      height: 23.h,
+                                      child: Stack(children: <Widget>[
+                                        Positioned(
+                                            top: 0.h,
+                                            left: 0.w,
+                                            child: GradientText(
+                                              'Manage Subscriptions',
+                                              textAlign: TextAlign.left,
+                                              style: TextStyle(
+                                                  fontFamily: 'Lexend',
+                                                  fontSize: 18.sp,
+                                                  letterSpacing:
+                                                      0 /*percentages not used in flutter. defaulting to zero*/,
+                                                  fontWeight: FontWeight.normal,
+                                                  height: 1.h),
+                                              colors: const [
+                                                Colors.pink,
+                                                Colors.purple,
+                                              ],
+                                            )),
+                                      ])),
+                                )),
                             Positioned(
                               top: 135.h,
                               left: 30.w,
@@ -433,29 +443,38 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             Positioned(
                                 top: 183.h,
                                 left: 63.w,
-                                child: SizedBox(
-                                    width: 112.w,
-                                    height: 23.h,
-                                    child: Stack(children: <Widget>[
-                                      Positioned(
-                                          top: 0.h,
-                                          left: 0.w,
-                                          child: GradientText(
-                                            'Payment',
-                                            textAlign: TextAlign.left,
-                                            style: TextStyle(
-                                                fontFamily: 'Lexend',
-                                                fontSize: 18.sp,
-                                                letterSpacing:
-                                                    0 /*percentages not used in flutter. defaulting to zero*/,
-                                                fontWeight: FontWeight.normal,
-                                                height: 1.h),
-                                            colors: const [
-                                              Colors.pink,
-                                              Colors.purple,
-                                            ],
-                                          )),
-                                    ]))),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              PaymentWidget()),
+                                    );
+                                  },
+                                  child: SizedBox(
+                                      width: 112.w,
+                                      height: 23.h,
+                                      child: Stack(children: <Widget>[
+                                        Positioned(
+                                            top: 0.h,
+                                            left: 0.w,
+                                            child: GradientText(
+                                              'Payment',
+                                              textAlign: TextAlign.left,
+                                              style: TextStyle(
+                                                  fontFamily: 'Lexend',
+                                                  fontSize: 18.sp,
+                                                  letterSpacing:
+                                                      0 /*percentages not used in flutter. defaulting to zero*/,
+                                                  fontWeight: FontWeight.normal,
+                                                  height: 1.h),
+                                              colors: const [
+                                                Colors.pink,
+                                                Colors.purple,
+                                              ],
+                                            )),
+                                      ])),
+                                )),
                             Positioned(
                               top: 183.h,
                               left: 30.w,

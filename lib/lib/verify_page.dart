@@ -42,9 +42,6 @@ class _VerifyPageState extends State<VerifyPage> {
     });
     final data = json.decode(response.body);
     if (data == "success") {
-      Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const ProfileDetails()),
-      );
     } else if (data == "error") {
       Fluttertoast.showToast(
           msg: "OTP is Wrong",
@@ -403,28 +400,37 @@ class _VerifyPageState extends State<VerifyPage> {
                               Positioned(
                                   top: 0.h,
                                   left: 0.w,
-                                  child: Container(
-                                      width: 212.w,
-                                      height: 65.h,
-                                      decoration: BoxDecoration(
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(80),
-                                          topRight: Radius.circular(80),
-                                          bottomLeft: Radius.circular(80),
-                                          bottomRight: Radius.circular(80),
-                                        ),
-                                        border: Border.all(
-                                          color: Colors.white,
-                                          width: 2.w,
-                                        ),
-                                        gradient: const LinearGradient(
-                                            begin: Alignment.centerLeft,
-                                            end: Alignment.centerRight,
-                                            colors: [
-                                              Color.fromRGBO(250, 69, 126, 1),
-                                              Color.fromRGBO(123, 73, 255, 1)
-                                            ]),
-                                      ))),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const ProfileDetails()),
+                                      );
+                                    },
+                                    child: Container(
+                                        width: 212.w,
+                                        height: 65.h,
+                                        decoration: BoxDecoration(
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(80),
+                                            topRight: Radius.circular(80),
+                                            bottomLeft: Radius.circular(80),
+                                            bottomRight: Radius.circular(80),
+                                          ),
+                                          border: Border.all(
+                                            color: Colors.white,
+                                            width: 2.w,
+                                          ),
+                                          gradient: const LinearGradient(
+                                              begin: Alignment.centerLeft,
+                                              end: Alignment.centerRight,
+                                              colors: [
+                                                Color.fromRGBO(250, 69, 126, 1),
+                                                Color.fromRGBO(123, 73, 255, 1)
+                                              ]),
+                                        )),
+                                  )),
                               Positioned(
                                   top: 5.h,
                                   left: 5.w,

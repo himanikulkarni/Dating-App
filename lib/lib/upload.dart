@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'package:datingapp_1/lib/home_swipe.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
@@ -8,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_borders/gradient_borders.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'home_swipe.dart';
 
 void main() {
   runApp(
@@ -244,25 +246,33 @@ class _UploadidWidgetState extends State<UploadidWidget> {
                         Positioned(
                             top: 0.h,
                             left: 0.w,
-                            child: Container(
-                                width: 200.w,
-                                height: 55.h,
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(80),
-                                    topRight: Radius.circular(80),
-                                    bottomLeft: Radius.circular(80),
-                                    bottomRight: Radius.circular(80),
-                                  ),
-                                  gradient: LinearGradient(
-                                      begin: Alignment.centerLeft,
-                                      end: Alignment.centerRight,
-                                      colors: [
-                                        Colors.pink,
-                                        Colors.purple,
-                                        Color.fromARGB(255, 114, 43, 237)
-                                      ]),
-                                ))),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => const swipe_card()),
+                                );
+                              },
+                              child: Container(
+                                  width: 200.w,
+                                  height: 55.h,
+                                  decoration: const BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(80),
+                                      topRight: Radius.circular(80),
+                                      bottomLeft: Radius.circular(80),
+                                      bottomRight: Radius.circular(80),
+                                    ),
+                                    gradient: LinearGradient(
+                                        begin: Alignment.centerLeft,
+                                        end: Alignment.centerRight,
+                                        colors: [
+                                          Colors.pink,
+                                          Colors.purple,
+                                          Color.fromARGB(255, 114, 43, 237)
+                                        ]),
+                                  )),
+                            )),
                         Positioned(
                             top: 20.h,
                             left: 60.w,

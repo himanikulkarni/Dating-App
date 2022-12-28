@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:datingapp_1/lib/likeshare.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -636,49 +637,62 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                                 Positioned(
                                     top: 20.h,
                                     left: 0.w,
-                                    child: Container(
-                                        width: 212.w,
-                                        height: 65.h,
-                                        decoration: BoxDecoration(
-                                          borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(80),
-                                            topRight: Radius.circular(80),
-                                            bottomLeft: Radius.circular(80),
-                                            bottomRight: Radius.circular(80),
-                                          ),
-                                          border: Border.all(
-                                            color: Colors.white,
-                                            width: 2.w,
-                                          ),
-                                          gradient: const LinearGradient(
-                                              begin: Alignment(
-                                                  0.9987574815750122,
-                                                  -0.05091972276568413),
-                                              end: Alignment(
-                                                  0.05091972276568413,
-                                                  0.07119524478912354),
-                                              colors: [
-                                                Color.fromRGBO(250, 69, 126, 1),
-                                                Color.fromRGBO(123, 73, 255, 1)
-                                              ]),
-                                        ))),
-                                Positioned(
-                                    top: 43.h,
-                                    left: 0.w,
-                                    right: 0.w,
-                                    child: Text(
-                                      'Continue',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: const Color.fromRGBO(
-                                              255, 255, 255, 1),
-                                          fontFamily: 'Lexend',
-                                          fontSize: 18,
-                                          letterSpacing:
-                                              0 /*percentages not used in flutter. defaulting to zero*/,
-                                          fontWeight: FontWeight.normal,
-                                          height: 1.w),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  LikesinterestsWidget()),
+                                        );
+                                      },
+                                      child: Container(
+                                          width: 212.w,
+                                          height: 65.h,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                              topLeft: Radius.circular(80),
+                                              topRight: Radius.circular(80),
+                                              bottomLeft: Radius.circular(80),
+                                              bottomRight: Radius.circular(80),
+                                            ),
+                                            border: Border.all(
+                                              color: Colors.white,
+                                              width: 2.w,
+                                            ),
+                                            gradient: const LinearGradient(
+                                                begin: Alignment(
+                                                    0.9987574815750122,
+                                                    -0.05091972276568413),
+                                                end: Alignment(
+                                                    0.05091972276568413,
+                                                    0.07119524478912354),
+                                                colors: [
+                                                  Color.fromRGBO(
+                                                      250, 69, 126, 1),
+                                                  Color.fromRGBO(
+                                                      123, 73, 255, 1)
+                                                ]),
+                                          )),
                                     )),
+                                Positioned(
+                                  top: 43.h,
+                                  left: 0.w,
+                                  right: 0.w,
+                                  child: Text(
+                                    'Continue',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: const Color.fromRGBO(
+                                            255, 255, 255, 1),
+                                        fontFamily: 'Lexend',
+                                        fontSize: 18,
+                                        letterSpacing:
+                                            0 /*percentages not used in flutter. defaulting to zero*/,
+                                        fontWeight: FontWeight.normal,
+                                        height: 1.w),
+                                  ),
+                                ),
                               ]))),
                     ]),
                   )),
